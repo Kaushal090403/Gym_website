@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Update Member{% endblock %}
+{% block content %}
+    <header>
+        <h1>Update Member</h1>
+    </header>
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Update</button>
+        </form>
+        <a href="{% url 'list_members' %}">Back to Members List</a>
+    </main>
+    <footer>
+        &copy; 2024 Gym Website. All rights reserved.
+    </footer>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}List Members{% endblock %}
+{% block content %}
+    <header>
+        <h1>Members List</h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Date of Birth</th>
+                    <th>Membership Start Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for member in members %}
+                <tr>
+                    <td>{{ member.name }}</td>
+                    <td>{{ member.email }}</td>
+                    <td>{{ member.phone }}</td>
+                    <td>{{ member.address }}</td>
+                    <td>{{ member.date_of_birth }}</td>
+                    <td>{{ member.membership_start_date }}</td>
+                    <td>
+                        <a href="{% url 'update_member' member.id %}">Edit</a>
+                        <a href="{% url 'delete_member' member.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'add_member' %}">Add New Member</a>
+    </main>
+    <footer>
+        &copy; 2024 Gym Website. All rights reserved.
+    </footer>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}List Trainer{% endblock %}
+{% block content %}
+    <header>
+        <h1>Trainers List</h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Specialty</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trainer in trainers %}
+                <tr>
+                    <td>{{ trainer.name }}</td>
+                    <td>{{ trainer.email }}</td>
+                    <td>{{ trainer.phone }}</td>
+                    <td>{{ trainer.specialty }}</td>
+                    <td>
+                        <a href="{% url 'update_trainer' trainer.id %}">Edit</a>
+                        <a href="{% url 'delete_trainer' trainer.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'add_trainer' %}">Add New Trainer</a>
+    </main>
+    <footer>
+        &copy; 2024 Gym Website. All rights reserved.
+    </footer>
+{% endblock %}

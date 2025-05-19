@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}List Memberships{% endblock %}
+{% block content %}
+    <header>
+        <h1>Memberships List</h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Member</th>
+                    <th>Class</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for membership in memberships %}
+                <tr>
+                    <td>{{ membership.member.name }}</td>
+                    <td>{{ membership.gym_trainer.name }}</td>
+                    <td>{{ membership.start_date }}</td>
+                    <td>{{ membership.end_date }}</td>
+                    <td>
+                        <a href="{% url 'update_membership' membership.id %}">Edit</a>
+                        <a href="{% url 'delete_membership' membership.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'add_membership' %}">Add New Membership</a>
+    </main>
+    <footer>
+        &copy; 2024 Gym Website. All rights reserved.
+    </footer>
+{% endblock %}

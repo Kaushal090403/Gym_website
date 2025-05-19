@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<style>
+    .about-us-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-us-container h1 {
+        text-align: center;
+        color: #333;
+    }
+    
+    .about-section {
+        margin-bottom: 20px;
+    }
+    
+    .about-section h2 {
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+    
+    .about-section p {
+        color: #555;
+        line-height: 1.6;
+    }
+</style>    
+<div class="about-us-container">
+    <h1>About Us</h1>
+    <p>Welcome to [Gym Name], where we are dedicated to helping you achieve your fitness goals in a welcoming and supportive environment.</p>
+    <div class="about-section">
+        <h2>Our Mission</h2>
+        <p>At [Gym Name], our mission is to provide top-notch fitness training and support to individuals of all fitness levels. We believe in a holistic approach to health, combining physical exercise, nutrition guidance, and mental wellness to help our members lead a healthier and happier life.</p>
+    </div>
+    <div class="about-section">
+        <h2>Our Team</h2>
+        <p>Our team of certified trainers and fitness experts is here to guide you every step of the way. Each member of our team brings their unique expertise and passion for fitness, ensuring you receive personalized attention and a tailored workout plan.</p>
+    </div>
+    <div class="about-section">
+        <h2>Our Facilities</h2>
+        <p>Our state-of-the-art facilities are equipped with the latest fitness equipment to provide you with a comprehensive workout experience. From cardio machines to weight training equipment, we have everything you need to stay fit and achieve your goals.</p>
+    </div>
+    <div class="about-section">
+        <h2>Join Us Today!</h2>
+        <p>Ready to start your fitness journey? Contact us today to learn more about our membership options and schedule a tour of our gym. We can't wait to welcome you to the [Gym Name] family!</p>
+    </div>
+</div>
+
+{% endblock %}

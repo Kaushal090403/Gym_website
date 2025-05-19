@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Delete Membership{% endblock %}
+{% block content %}
+    <header>
+        <h1>Delete Membership</h1>
+    </header>
+    <main>
+        <p>Are you sure you want to delete the membership for {{ membership.member.name }} in {{ membership.gym_class.name }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+        <a href="{% url 'list_memberships' %}">Cancel</a>
+    </main>
+    <footer>
+        &copy; 2024 Gym Website. All rights reserved.
+    </footer>
+{% endblock %}
